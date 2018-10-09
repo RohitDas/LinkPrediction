@@ -46,8 +46,20 @@ def get_attack_summary(day_to_csv_dict):
             print(e)
     return day_to_attack_summary
 
-def get_aggregrate_attack_info():
-    pass
+def get_aggregrate_attack_info(day_to_attack_summary):
+    aggregrate_summary = {}
+    for day, attack_summary in day_to_attack_summary.iteritems():
+        for player1, targets in attack_summary.iteritems():
+            aggregrate_summary.setdefault(player1, set()).update(targets)
+    return aggregrate_summary
 
 day_csv = read_files(attack_directory)
-print(get_attack_summary(day_csv))
+attack_summary = get_attack_summary(day_csv)
+aggregrate_summary = get_aggregrate_attack_info(attack_summary)
+
+save_file = "attack_summary.csv"
+with open(save_file, "wb") as csvfile:
+    writer = csv.writer(csvfile, delimiter='|', quoting=csv.QUOTE_MINIMAL)
+    for player, targets in aggregrate_summary.iteritems():
+        print "here"
+        writer.writerow([player] + list(targets))
