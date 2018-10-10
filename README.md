@@ -3,7 +3,7 @@ Using graphx with pyspark.
 It is not easy to work with graphx with pyspark.
 People should use Scala for a better experience.
 
-However, this are the folowing steps
+However, these are the folowing steps:
 
 1. Download the graphframes jar
 2. Unjar it
