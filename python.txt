@@ -1,0 +1,11 @@
+output=open("communities-2009-12-3-singleton.txt", "a+")
+>>> with open('communities-2009-12-3.txt','r') as f:
+...     for line in f:
+...        count = 0
+...        for word in line.split():
+...            count=count+1
+...        if count==1:
+...           print(word)
+...           print(count)
+...           output.write(word)
+...           output.write("\n")
