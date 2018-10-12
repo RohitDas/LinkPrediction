@@ -1,0 +1,19 @@
+output=open("forever-single.txt","a+")
+>>> with open('communities-2009-12-1-singleton.txt','r') as f:
+...     for line in f:
+...        for word in line.split():
+...            a = word
+...            print(a)
+...            count=1
+...            value = 2
+...            with open('communities-2009-12-' + str(value) + '-' + 'singleton'+'.txt','r') as g:
+...              for line in g:
+...                  for chech_word in line.split():
+...                       b = chech_word
+...                       print(b)
+...                       if a == b:
+...                          count = count + 1
+...                       value = value+1
+...                  if count == 21:
+...                     output.write(word)
+...                     output.write("\n")
