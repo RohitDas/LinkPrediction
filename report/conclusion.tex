@@ -1,4 +1,26 @@
 \section{Conclusion and Future Work}
 \label{sec:conclusion}
 
-Do it at the end.
+In our fututre work, we want to apply and evaluate our algorithm on other
+datasets such as social networks and research community networks. We want to
+also work on improving the performance of our algorithm for performing dynamic
+multiplex link prediction by incorporating more network features. This might
+be cross intuitive as incorporating more features always does not provide with
+better results for some datasets.  In the future we would also want to work on
+modification of our reweighting procedure to account for negative cross layer
+influences.
+
+Currently, our implementation suffers from quadratic runtime bottlenecks on
+the number of nodes in the overall graph. In the future, we hope to revamp our
+code to use multiple cores instead of one through parallel processing of
+sparse data structures that would decrease our load on the memory usage as
+well. Due to the mathematical nature of our computations, our CPU usage shall
+continue to be high.  Finally, our examined dataset was only a smalll snapshot
+of the dataset. As the volume of dataset increases, we need to look for other
+programming paradigms such as MapReduce if multithreading or multiprocessing
+on a single-node falls short to keep the runtime linear with increase in load.
+Leveraging the scalability of Apache GraphX over a cluster will be a start.
+However, such decisions are still vague and will be motivated with further
+research into not only such acyclic graphical models of computations such as
+Spark, Dryad or Hadoop, but also having an indepth understanding of
+combinatorial graph algorithms over big graphs.

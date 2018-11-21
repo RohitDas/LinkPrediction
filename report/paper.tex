@@ -10,10 +10,13 @@
 
 %%%% To use the SIGCHI extended abstract template, please visit
 % https://www.overleaf.com/read/zzzfqvkmrfzn
-
+\settopmatter{printacmref=false}
+\renewcommand\footnotetextcopyrightpermission[1]{} % removes footnote with conference information in first column
+\pagestyle{plain} % removes running headers
 
 \usepackage{booktabs} % For formal tables
-
+\usepackage{subcaption}
+\captionsetup{compatibility=false}
 
 % Copyright
 % \setcopyright{none}
@@ -186,7 +189,7 @@
 \input{background}
 \input{solution}
 \input{evaluation}
-\input{related}
+% \input{related}
 \input{conclusion}
 
 

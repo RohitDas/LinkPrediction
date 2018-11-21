@@ -1,20 +1,85 @@
 \section{Introduction}
 \label{sec:intro}
 
-What is link prediction?
-How is it important?
-What is a gaming network?
-What is link prediction in gaming networks?
+Most of the real world communties such as research community, social networks,
+gaming networks and  transportation networks can be visualized as graphs with
+vertices as the subjects(For Eg: people in social networks) and  edges as the
+relationship between the subjects. These graphs are highly dynamic in nature
+and the Link Prediction problem mainly tries to address these  questions, 1) How
+do these relationships change with time? 2) What are the factors that
+contribute to these changes? Addressing these problems is quite beneficial to
+the  respective communities, for instance, Facebook uses link prediction to
+suggest new  friends to its users and the research community can be benifitted by
+predicting mutually  beneficial connections between different research
+professionals~\cite{tang2016scholat}.
+
+It is difficult to answer the first question since the relationsips in most
+networks depend on a complex set of interdependent factors. However,
+preliminary  works in Link Prediction~\cite{liben2007link} have used path
+based and node based similarity metrics on the existing graph to predict
+future links between any two nodes of a graph. This is known as single layer link
+prediction i.e., predicting  future links based only on the current snapshot
+of a graph. These methods have very low accuracy and they do not account for
+any temporal information such as number of times a link existed in past
+snapshots of  the graph etc.,
+
+These shortcomings of static link prediction are addressed by techniques which
+use  past snapshots of a network to model the evolution of a graph over time
+and extract  features which hold temporal
+information~\cite{sarkar2012nonparametric}. These methods often give better
+performace  than the single layer link prediction methods but they assume that
+each graph is independent of other graphs. Notice that, in real world, graphs
+coevolve with each other and their evolution is driven by a complex set of
+latent features. For instance, Facebook  community may contain a Friendship
+graph and a visit graph. The friendship graph  consists of accounts as nodes
+and friendship as edges while the visit graph consits of  accounts as nodes
+and edges signifying a profile visit of one node by another. These two graphs
+are interdependent since more profile visits to an account A by another
+account  B could mean B likes A hence, influencing A's friendship with B. Such
+networks are called multiplex networks where the node set belongs to the same
+domain  but the edge sets are different leading to two different
+graphs(layers) which  might be co-dependent.
+
+Social media networks have received significant attention even though it is
+difficult to predict links in their co dependent layers. To alleviate the
+complexity  and to increase our understanding in this space, we choose the
+Travian dataset~\cite{travianDataset} as our multiplex network. It consists of
+three networks Trade, Message and Attack. Travian is a web-based online multi
+player game and  each game features teams upto $60$ players. In the trade
+layer the nodes are players and edges signify a trade relationship between the
+nodes, the edges in message signify an event of one player sending a message
+to another and  the attack edges signify the event of an attack. We study how
+these layers co-evolve with each other to answer questions like 1) If player1
+messages player2 a lot then can we conclude that they are not going to attack
+each other or vice versa? 2) Similarly, what effect does the trade network
+have on the attack network?
+
+
+
+
+
+
+
+
+% Link prediction broadly refers to 
+% What is link prediction?
+% How is it important?
+% What is a gaming network?
+% What is link prediction in gaming networks?
 
 \subsection{Contributions}
 \label{sec:contribution}
 
-Our contributions in this paper.
+\begin{enumerate}
+	\item 	We do a comprehensive comparitive study of various methods including 
+	single layer  and multiple layer link prediction methods in Gaming networks.
+	\item We propose a variation of an existing algorithm to predict links in coevolving networks.
+	\item We compare our algorithm to the original algorithm and all the remaining methods and establish 
+	that our algorithm outperforms the others.
+\end{enumerate}	
 
-We do not need to explain here everything. We only write 5-6 lines for each
-question. Most important thing to mention in intro is what are our
-contributions inn this paper.
 
-Write the contributions part after writing our methods and evaluation
-sections.
+
+
+
 
